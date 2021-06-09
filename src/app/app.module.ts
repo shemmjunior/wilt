@@ -10,7 +10,7 @@ import { NbMenuModule } from '@nebular/theme';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,

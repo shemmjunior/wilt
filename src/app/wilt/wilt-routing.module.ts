@@ -27,7 +27,19 @@ const routes: Routes = [
         loadChildren: () =>
           import('../wilt/explore/explore.module').then((m) => m.ExploreModule),
       },
-      { path: 'profile', loadChildren: () => import('../wilt/profile/profile.module').then(m => m.ProfileModule) }
+      {
+        path: 'profile',
+        loadChildren: () =>
+          import('../wilt/profile/profile.module').then((m) => m.ProfileModule),
+      },
+      {
+        path: 'categories',
+        loadChildren: () =>
+          import('../wilt/categories/categories.module').then(
+            (m) => m.CategoriesModule
+          ),
+      },
+      { path: 'post-wilt', loadChildren: () => import('../wilt/post-wilt/post-wilt.module').then(m => m.PostWiltModule) }
     ],
   },
 ];

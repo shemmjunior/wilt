@@ -13,28 +13,23 @@ import { CommonModule } from '@angular/common';
 import { NbInputModule, NbLayoutModule } from '@nebular/theme';
 import { NbEvaIconsModule } from '@nebular/eva-icons';
 
-
 @NgModule({
   declarations: [],
-  imports: [
-    CommonModule,
+  imports: [CommonModule],
+  exports: [
+    NbLayoutModule,
+    NbInputModule,
+    NbButtonModule,
+    NbCardModule,
+    NbActionsModule,
+    NbEvaIconsModule,
+    NbIconModule,
+    NbUserModule,
+    NbContextMenuModule,
+    NbSidebarModule,
+    NbListModule,
+    NbSearchModule,
+    NbTooltipModule,
   ],
-  exports: [ NbLayoutModule,
-             NbInputModule,
-             NbButtonModule,
-             NbCardModule,
-             NbActionsModule,
-             NbEvaIconsModule,
-             NbIconModule,
-             NbUserModule,
-             NbContextMenuModule,
-             NbSidebarModule,
-             NbListModule,
-             NbSearchModule,
-             NbTooltipModule
-
-
-
-            ]
 })
-export class NebularModule { }
+export class NebularModule {}

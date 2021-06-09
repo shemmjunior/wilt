@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 
 import { ExploreRoutingModule } from './explore-routing.module';
 import { ExploreComponent } from './explore.component';
+import { NebularModule } from '../../shared/nebular.module';
+import { UtilityModule } from '../../shared/utility.module';
 
 
 @NgModule({
@@ -11,7 +13,9 @@ import { ExploreComponent } from './explore.component';
   ],
   imports: [
     CommonModule,
-    ExploreRoutingModule
+    ExploreRoutingModule,
+    NebularModule,
+    UtilityModule
   ]
 })
 export class ExploreModule { }

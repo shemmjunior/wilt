@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 
 import { CategoriesRoutingModule } from './categories-routing.module';
 import { CategoriesComponent } from './categories.component';
+import { UtilityModule } from '../../shared/utility.module';
+import { NebularModule } from '../../shared/nebular.module';
 
 
 @NgModule({
@@ -11,7 +13,9 @@ import { CategoriesComponent } from './categories.component';
   ],
   imports: [
     CommonModule,
-    CategoriesRoutingModule
+    CategoriesRoutingModule,
+    NebularModule,
+    UtilityModule
   ]
 })
 export class CategoriesModule { }

@@ -1,1 +1,36 @@
-<p>explore works!</p>
+<h4>Top Wilts today</h4>
+
+<div  fxLayout="row wrap" fxLayoutGap="32px" fxLayoutAlign="flex-start">
+  <div fxFlex *ngFor="let item of today">
+    <nb-card style="width: 300px;" status="success">
+      <nb-card-header>Nebula</nb-card-header>
+      <nb-card-body>
+        A nebula is an interstellar cloud of dust, hydrogen, helium and other ionized gases.
+        Originally, nebula was a name for any diffuse astronomical object,
+        including galaxies beyond the Milky Way.
+      </nb-card-body>
+      <nb-card-footer>By Wikipedia</nb-card-footer>
+    </nb-card>
+  </div>
+
+  </div>
+
+<h4>Top Wilts this week</h4>
+
+<div  fxLayout="row wrap" fxLayoutGap="32px" fxLayoutAlign="flex-start">
+  <div fxFlex *ngFor="let item of explore">
+    <nb-card style="width: 300px;" status="danger">
+      <nb-card-header>Nebula</nb-card-header>
+      <nb-card-body>
+        A nebula is an interstellar cloud of dust, hydrogen, helium and other ionized gases.
+        Originally, nebula was a name for any diffuse astronomical object,
+        including galaxies beyond the Milky Way.
+      </nb-card-body>
+      <nb-card-footer>By Wikipedia</nb-card-footer>
+    </nb-card>
+  </div>
+
+  </div>
+
+
+

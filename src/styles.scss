@@ -1,6 +1,7 @@
 @import 'themes';
 
 @import '~@nebular/theme/styles/globals';
+@import './assets/styles/global_layout.scss';
 
 @include nb-install() {
   @include nb-theme-global();

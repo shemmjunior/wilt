@@ -11,16 +11,16 @@
   <nb-layout-header fixed>
     <h4>WILT</h4>
     <div class="row">
-      <button class="nav-button" [routerLink]="['wilts']" nbButton>Home</button>
-      <button class="nav-button" [routerLink]="['explore']" nbButton>
+      <button class="nav-button" [routerLink]="['wilts']" nbButton ghost>Home</button>
+      <button class="nav-button" [routerLink]="['explore']" nbButton ghost>
         Explore
       </button>
-      <button class="nav-button" [routerLink]="['']" nbButton>
+      <button class="nav-button" [routerLink]="['categories']" nbButton ghost>
         Categories
       </button>
       <nb-search type="modal-drop" placeholder="Search Wilts"></nb-search>
     </div>
-    <span class="spacer"></span>
+    <!-- <span class="spacer"></span> -->
 
     <nb-user name="Alice Cooper" [nbContextMenu]="items" nbContextMenuTag="my-context-menu">
     </nb-user>
