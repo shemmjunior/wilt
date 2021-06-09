@@ -1,0 +1,32 @@
+<nb-layout>
+  <nb-sidebar state="compacted">
+    <div style="margin-left: -10px;">
+      <button class="sidebar-icons" nbTooltipStatus="primary" nbTooltip="Post a wilt" nbTooltipPlacement="right" nbButton ghost ><nb-icon icon="plus"></nb-icon></button> <br>
+      <button class="sidebar-icons" nbTooltipStatus="primary" nbTooltip="Your wilts" nbTooltipPlacement="right" nbButton ghost><nb-icon icon="square"></nb-icon></button> <br>
+      <button class="sidebar-icons" nbTooltipStatus="primary" nbTooltip="Favorites" nbTooltipPlacement="right" nbButton ghost><nb-icon icon="star"></nb-icon></button> <br>
+      <button class="sidebar-icons" nbTooltipStatus="primary" nbTooltip="Help" nbTooltipPlacement="right" nbButton ghost><nb-icon icon="question-mark-circle"></nb-icon></button> <br>
+    </div>
+  </nb-sidebar>
+
+  <nb-layout-header fixed>
+    <h4>WILT</h4>
+    <div class="row">
+      <button class="nav-button" [routerLink]="['wilts']" nbButton>Home</button>
+      <button class="nav-button" [routerLink]="['explore']" nbButton>
+        Explore
+      </button>
+      <button class="nav-button" [routerLink]="['']" nbButton>
+        Categories
+      </button>
+      <nb-search type="modal-drop" placeholder="Search Wilts"></nb-search>
+    </div>
+    <span class="spacer"></span>
+
+    <nb-user name="Alice Cooper" [nbContextMenu]="items" nbContextMenuTag="my-context-menu">
+    </nb-user>
+  </nb-layout-header>
+
+  <nb-layout-column class="colored-column-basic">
+    <router-outlet></router-outlet>
+  </nb-layout-column>
+</nb-layout>

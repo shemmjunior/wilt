@@ -1,0 +1,21 @@
+.row {
+  display: flex;
+}
+
+.nav-button {
+  margin-left: 20px;
+  background-color: transparent !important;
+
+}
+
+.nav-button:hover {
+  color: purple !important;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+.sidebar-icons {
+  margin-bottom: 10px;
+}
