@@ -39,7 +39,6 @@ const routes: Routes = [
             (m) => m.CategoriesModule
           ),
       },
-      { path: 'post-wilt', loadChildren: () => import('../wilt/post-wilt/post-wilt.module').then(m => m.PostWiltModule) }
     ],
   },
 ];
