@@ -16,7 +16,7 @@ import { FavWiltsComponent } from './fav-wilts/fav-wilts.component';
     PostWiltComponent,
     EditWiltComponent,
     MyWiltsComponent,
-    FavWiltsComponent
+    FavWiltsComponent,
 
   ],
   imports: [

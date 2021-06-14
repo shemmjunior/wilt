@@ -4,6 +4,7 @@ import { WiltsComponent } from './wilts.component';
 import { PostWiltComponent } from './post-wilt/post-wilt.component';
 import { MyWiltsComponent } from './my-wilts/my-wilts.component';
 import { FavWiltsComponent } from './fav-wilts/fav-wilts.component';
+import { EditWiltComponent } from './edit-wilt/edit-wilt.component';
 
 const routes: Routes = [
   {
@@ -19,7 +20,16 @@ const routes: Routes = [
       },
       {
         path: 'own',
-        component: MyWiltsComponent
+        children: [
+          {
+            path: '',
+            component: MyWiltsComponent,
+          },
+          {
+            path: 'edit',
+            component: EditWiltComponent
+          }
+        ]
       },
       {
         path: 'fav',

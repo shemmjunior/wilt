@@ -1,1 +1,28 @@
-<p>edit-wilt works!</p>
+<nb-layout>
+  <nb-layout-column>
+    <div fxLayout="row" fxLayoutAlign="center end">
+      <div fxFlex>
+        <nb-layout>
+          <nb-layout-column class="colored-column-info">
+            <nb-card style="width: 50vw; margin: 5vh 20vw">
+              <nb-card-body>
+                <h5 style="text-align: center">Update Wilt</h5>
+                <input nbInput type="text" fullWidth shape="rectangle" placeholder="Title" />
+                <br /><br />
+                <textarea nbInput fullWidth placeholder="Description"></textarea>
+                <br /><br />
+                <input nbInput type="text" fullWidth shape="rectangle" placeholder="Reference Link (Optional)" />
+                <br /><br />
+                <input nbInput type="text" fullWidth shape="rectangle" placeholder="Reference Link (Optional)" />
+                <br /><br />
+                <button nbButton fullWidth shape="rectangle" status="primary" (click)="submit()">
+                  Update
+                </button>
+              </nb-card-body>
+            </nb-card>
+          </nb-layout-column>
+        </nb-layout>
+      </div>
+    </div>
+  </nb-layout-column>
+</nb-layout>

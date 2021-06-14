@@ -20,7 +20,7 @@ export class PostWiltComponent implements OnInit {
   }
 
   submit() {
-    this.toastService.showToast('primary', 'Post Added')
+    this.toastService.showToast('top-right', 'Post Added')
     this.router.navigate(['../'], { relativeTo: this.route })
 
   }

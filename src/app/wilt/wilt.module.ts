@@ -8,7 +8,9 @@ import { UtilityModule } from '../shared/utility.module';
 
 @NgModule({
   declarations: [HomeComponent],
-  imports: [CommonModule, WiltRoutingModule, NebularModule, UtilityModule],
+  imports: [CommonModule, WiltRoutingModule, NebularModule, UtilityModule,
+
+  ],
   providers: [NbMenuService],
 })
 export class WiltModule {}
