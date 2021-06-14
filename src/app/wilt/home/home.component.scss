@@ -10,6 +10,36 @@
 
 }
 
+@media screen and (max-width: 600px) {
+  .nav-button {
+    display: none;
+  }
+
+  .sidebar {
+    display: none;
+  }
+
+  .user-menu1 {
+    display: none;
+  }
+
+  .user-menu2 {
+    display: visible;
+  }
+
+}
+
+@media screen and (min-width: 460px) and (max-width: 1900px) {
+  .user-menu1 {
+    display: visible;
+  }
+
+  .user-menu2 {
+    display: none;
+  }
+
+}
+
 .nav-button:hover {
   color: purple !important;
 }
