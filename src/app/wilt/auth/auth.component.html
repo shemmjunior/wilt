@@ -5,9 +5,9 @@
         <nb-card class="center-card">
           <nb-card-body>
             <h4 style="text-align: center;">WILT LOGIN</h4>
-            <input nbInput type="text" fullWidth shape="rectangle" placeholder="Email" />
+            <input nbInput type="text" [(ngModel)]="email" fullWidth shape="rectangle" placeholder="Email" />
             <br /><br />
-            <input nbInput type="text" fullWidth shape="rectangle" placeholder="Password" />
+            <input nbInput type="text" fullWidth [(ngModel)]="password" shape="rectangle" placeholder="Password" />
             <br /><br />
             <button nbButton fullWidth shape="rectangle" status="primary" (click)="login()">
               Login

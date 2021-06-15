@@ -26,7 +26,7 @@ const routes: Routes = [
             component: MyWiltsComponent,
           },
           {
-            path: 'edit',
+            path: 'edit/:id',
             component: EditWiltComponent
           }
         ]

@@ -7,13 +7,13 @@
             <nb-card class="center-card">
               <nb-card-body>
                 <h5 style="text-align: center">Post Wilt</h5>
-                <input nbInput type="text" fullWidth shape="rectangle" placeholder="Title" />
+                <input nbInput type="text" [(ngModel)]="title" fullWidth shape="rectangle" placeholder="Title" />
                 <br /><br />
-                <textarea nbInput fullWidth placeholder="Description"></textarea>
+                <textarea nbInput fullWidth [(ngModel)]="description" placeholder="Description"></textarea>
                 <br /><br />
-                <input nbInput type="text" fullWidth shape="rectangle" placeholder="Reference Link (Optional)" />
+                <input nbInput type="text" fullWidth [(ngModel)]="ref_link_one" shape="rectangle" placeholder="Reference Link (Optional)" />
                 <br /><br />
-                <input nbInput type="text" fullWidth shape="rectangle" placeholder="Reference Link (Optional)" />
+                <input nbInput type="text" fullWidth [(ngModel)]="ref_link_two" shape="rectangle" placeholder="Reference Link (Optional)" />
                 <br /><br />
                 <button nbButton fullWidth shape="rectangle" status="primary" (click)="submit()">
                   Post

@@ -6,6 +6,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NbThemeModule, NbSidebarModule, NbToastrModule } from '@nebular/theme';
 import { WiltModule } from './wilt/wilt.module';
 import { NbMenuModule } from '@nebular/theme';
+import { HttpClientModule } from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
@@ -20,6 +22,7 @@ import { NbMenuModule } from '@nebular/theme';
     NbMenuModule.forRoot(),
     NbToastrModule.forRoot(),
     WiltModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

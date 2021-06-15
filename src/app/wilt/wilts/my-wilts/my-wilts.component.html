@@ -12,8 +12,8 @@ Wilt Title
     <nb-card-footer>
       On 07 Jun 2021
       <div style="float: right;">
-      <button status="danger" nbButton ghost nbTooltipStatus="danger" (click)="open()" nbTooltip="Delete wilt" nbTooltipPlacement="top"><nb-icon icon="trash-outline"></nb-icon></button>
-      <button status="primary"[routerLink]="['edit']" nbButton ghost nbTooltipStatus="primary" nbTooltip="Edit wilt" nbTooltipPlacement="top"><nb-icon icon="edit-outline"></nb-icon></button>
+      <button status="danger" nbButton ghost nbTooltipStatus="danger" (click)="deleteWilt()" nbTooltip="Delete wilt" nbTooltipPlacement="top"><nb-icon icon="trash-outline"></nb-icon></button>
+      <button status="primary"[routerLink]="['edit', item]" nbButton ghost nbTooltipStatus="primary" nbTooltip="Edit wilt" nbTooltipPlacement="top"><nb-icon icon="edit-outline"></nb-icon></button>
     </div>
     </nb-card-footer>
   </nb-card>
