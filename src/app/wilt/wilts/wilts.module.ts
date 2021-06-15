@@ -8,6 +8,7 @@ import { PostWiltComponent } from './post-wilt/post-wilt.component';
 import { EditWiltComponent } from './edit-wilt/edit-wilt.component';
 import { MyWiltsComponent } from './my-wilts/my-wilts.component';
 import { FavWiltsComponent } from './fav-wilts/fav-wilts.component';
+import { UtilityModule } from '../../shared/utility.module';
 
 
 @NgModule({
@@ -16,13 +17,14 @@ import { FavWiltsComponent } from './fav-wilts/fav-wilts.component';
     PostWiltComponent,
     EditWiltComponent,
     MyWiltsComponent,
-    FavWiltsComponent
+    FavWiltsComponent,
 
   ],
   imports: [
     CommonModule,
     WiltsRoutingModule,
-    NebularModule
+    NebularModule,
+    UtilityModule
   ]
 })
 export class WiltsModule { }

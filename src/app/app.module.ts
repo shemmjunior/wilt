@@ -5,8 +5,9 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NbThemeModule, NbSidebarModule, NbToastrModule } from '@nebular/theme';
 import { WiltModule } from './wilt/wilt.module';
-import { NbDialogModule } from '@nebular/theme';
 import { NbMenuModule } from '@nebular/theme';
+import { HttpClientModule } from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
@@ -19,9 +20,9 @@ import { NbMenuModule } from '@nebular/theme';
     NbSidebarModule.forRoot(),
     NbThemeModule.forRoot({ name: 'default' }),
     NbMenuModule.forRoot(),
-    NbDialogModule.forChild(),
     NbToastrModule.forRoot(),
     WiltModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

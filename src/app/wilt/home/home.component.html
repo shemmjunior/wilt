@@ -1,5 +1,5 @@
 <nb-layout>
-  <nb-sidebar state="compacted">
+  <nb-sidebar state="compacted" class="sidebar">
     <div style="margin-left: -10px;">
       <button class="sidebar-icons" [routerLink]="'add'" nbTooltipStatus="primary" nbTooltip="Post a wilt" nbTooltipPlacement="right" nbButton ghost ><nb-icon icon="plus"></nb-icon></button> <br>
       <button class="sidebar-icons" [routerLink]="'own'"  nbTooltipStatus="primary" nbTooltip="Your wilts" nbTooltipPlacement="right" nbButton ghost><nb-icon icon="square"></nb-icon></button> <br>
@@ -9,7 +9,7 @@
   </nb-sidebar>
 
   <nb-layout-header fixed>
-    <h4>WILT</h4>
+    <h4 [routerLink]="'home'" >WILT</h4>
     <div class="row">
       <button class="nav-button" [routerLink]="['wilts']" nbButton ghost>Home</button>
       <button class="nav-button" [routerLink]="['explore']" nbButton ghost>
@@ -18,9 +18,10 @@
       <button class="nav-button" [routerLink]="['categories']" nbButton ghost>
         Categories
       </button>
-      <nb-search type="modal-drop" placeholder="Search Wilts"></nb-search>
     </div>
-    <nb-user name="Alice Cooper" [nbContextMenu]="items" nbContextMenuTag="my-context-menu">
+    <nb-user class="user-menu1" name="Alice Cooper" picture="https://randomuser.me/api/portraits/women/43.jpg" [nbContextMenu]="items" nbContextMenuTag="my-context-menu">
+    </nb-user>
+    <nb-user class="user-menu2" name="Alice Cooper" picture="https://randomuser.me/api/portraits/women/43.jpg" [nbContextMenu]="minimized" nbContextMenuTag="my-context-menu">
     </nb-user>
   </nb-layout-header>
 
