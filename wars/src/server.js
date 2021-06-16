@@ -1,16 +1,15 @@
 const express = require('express')
 const serverless = require('serverless-http')
+const mongoose = require('mongoose')
+const db = require('./config/mongo.config')
 
 const app = express()
+app.use(express.json());
 const router = express.Router();
 
-const wilt = require('./api/wilt')
-const profile = require('./api/profile')
+mongoose.connect(db.url, { useNewUrlParser: true, useUnifiedTopology: true })
 
-router.get('/create', wilt.create)
-router.get('/wilts', wilt.index)
-
-
+require('./api/wilt/routes')(router)
 
 
 app.use('/.netlify/functions/server', router)
