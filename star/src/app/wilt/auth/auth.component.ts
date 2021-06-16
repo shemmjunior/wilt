@@ -1,6 +1,7 @@
 import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from './auth.service';
+// import { AuthService } from './auth.service';
+import { AuthService } from '@auth0/auth0-angular';
 
 @Component({
   selector: 'app-auth',
@@ -22,6 +23,7 @@ export class AuthComponent implements OnInit {
       email: this.email,
       password: this.password
     };
+    // this.authService.loginWithRedirect()
 
     // this.authService.login(data).subscribe((res) => {
     //   console.log(res)
@@ -29,7 +31,7 @@ export class AuthComponent implements OnInit {
     //   console.log(err)
     // })
 
-    this.router.navigate(['home'])
+    // this.router.navigate(['home'])
   }
 
 }

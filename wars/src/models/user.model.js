@@ -3,9 +3,18 @@ var Schema = mongoose.Schema;
 
 UserSchema = new Schema(
     {
-    email: String,
+    email: {
+        type: String,
+        required: true,
+        unique: 1,
+        trim: true
+    },
     username: String,
-    password: String,
+    password: {
+        type: String,
+        required: true,
+        minLength: 6
+    },
     avatar: String
     },
     { timestamps: true }
