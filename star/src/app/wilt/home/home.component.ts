@@ -2,6 +2,7 @@ import { NbMenuService } from '@nebular/theme';
 import { NbSearchService } from '@nebular/theme';
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
+import { LocalStorageService } from '../../services/localStorage.service';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -25,7 +26,8 @@ export class HomeComponent implements OnInit {
     private searchService: NbSearchService,
     private menuService: NbMenuService,
     private router: Router,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private localStorage: LocalStorageService
   ) {}
 
   ngOnInit(): void {
@@ -79,6 +81,7 @@ export class HomeComponent implements OnInit {
   }
 
   logout() {
+    this.localStorage.clearToken()
     this.router.navigate(['../']);
   }
 

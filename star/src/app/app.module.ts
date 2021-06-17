@@ -9,7 +9,7 @@ import { NbMenuModule } from '@nebular/theme';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthHttpInterceptor, AuthModule } from '@auth0/auth0-angular';
 import { environment } from '../environments/environment';
-
+import { InterceptorModule } from './inteceptors/interceptor.module';
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,17 +24,11 @@ import { environment } from '../environments/environment';
     NbToastrModule.forRoot(),
     WiltModule,
     HttpClientModule,
+    InterceptorModule,
     AuthModule.forRoot({
       domain: 'wiltx.us.auth0.com',
       clientId: environment.clientId,
     }),
-  ],
-  providers: [
-    {
-      provide: HTTP_INTERCEPTORS,
-      useClass: AuthHttpInterceptor,
-      multi: true,
-    },
   ],
   bootstrap: [AppComponent]
 })

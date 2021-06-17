@@ -1,6 +1,11 @@
 [functions]
 directory = "./src"
 
+[[headers]]
+    for = "/*"
+        [headers.values]
+            Access-Control-Allow-Origin = "*"
+
 [build]
 publish= "dist"
 command = "do-build && cp .env functions/"
