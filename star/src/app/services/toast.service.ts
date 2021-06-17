@@ -12,7 +12,7 @@ export class ToastService {
 
 
   showSuccessToast(message) {
-    this.toastrService.success(message, 'Success')
+    this.toastrService.info(message, 'Success')
   }
 
   showDangerToast(message) {

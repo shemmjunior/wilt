@@ -1,4 +1,4 @@
-import { NbPopoverModule } from '@nebular/theme';
+import { NbPopoverModule, NbSpinnerModule } from '@nebular/theme';
 import { NbTooltipModule } from '@nebular/theme';
 import { NbSearchModule } from '@nebular/theme';
 import { NbListModule } from '@nebular/theme';
@@ -31,7 +31,8 @@ import { NbEvaIconsModule } from '@nebular/eva-icons';
     NbListModule,
     NbSearchModule,
     NbTooltipModule,
-    NbPopoverModule
+    NbPopoverModule,
+    NbSpinnerModule
 
   ],
 })

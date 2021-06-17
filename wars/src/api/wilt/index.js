@@ -7,7 +7,7 @@ exports.create = (req, res) => {
     ref_link_two: req.body.ref_link_two,
   })
     .then(() => {
-      res.send({ success: "Wilt Successfully Posted" });
+      res.send({ message: "Wilt Successfully Posted" });
     })
     .catch((err) => {
       res.status(500).send(err);
@@ -36,6 +36,11 @@ exports.findOne = (req, res) => {
     });
 };
 
+exports.userWilts = (req, res) => {
+  const user_id = req.query.user_id;
+  
+}
+
 exports.update = (req, res) => {
   const id = req.params.id;
 
@@ -46,7 +51,7 @@ exports.update = (req, res) => {
     ref_link_two: req.body.ref_link_two,
   })
     .then(() => {
-      res.send({ success: "Wilt Successfully Updated" });
+      res.send({ message: "Wilt Successfully Updated" });
     })
     .catch((err) => {
       res.status(500).send(err);
@@ -58,7 +63,7 @@ exports.delete = (req, res) => {
 
   Wilt.findByIdAndDelete(id)
     .then(() => {
-      res.send({ success: "Wilt Successfully Deleted" });
+      res.send({ message: "Wilt Successfully Deleted" });
     })
     .catch((err) => {
       res.status(500).send(err);

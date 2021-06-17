@@ -15,6 +15,7 @@ export class AuthComponent implements OnInit {
   email: string;
   password: string;
   username: string;
+  loading = false;
 
   constructor(
     private router: Router,
@@ -39,13 +40,15 @@ export class AuthComponent implements OnInit {
       email: this.email,
       password: this.password,
     };
-
+    this.loading = true;
     this.localAuth.signup(data).subscribe(
       (res) => {
         this.toast.showSuccessToast(res.message)
         this.router.navigate(['home']);
+        this.loading = false;
       },
       (err) => {
+        this.loading = false;
         this.toast.showDangerToast(err.error.message)
       }
     );
@@ -57,14 +60,16 @@ export class AuthComponent implements OnInit {
       password: this.password,
     };
     // this.authService.loginWithRedirect()
-
+    this.loading = true;
     this.localAuth.login(data).subscribe(
       (res) => {
         this.localStorage.saveUserData(res);
         this.toast.showSuccessToast('Login Successfull')
         this.router.navigate(['home']);
+        this.loading = false;
       },
       (err) => {
+        this.loading = false;
         this.toast.showDangerToast(err.error.message)
       }
     );

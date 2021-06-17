@@ -1,7 +1,13 @@
 const User = require("../../models/user.model");
 const bcrypt = require("bcrypt");
-const boom = require("boom");
+const authValidation = require('../../validations/auth.validation')
+
 exports.signup = async (req, res) => {
+
+  const { error } = authValidation.registerValidation(req.body);
+
+  if (error) return res.status(400).send({ message: error.details[0].message })
+
   const user = await User.findOne({ email: req.body.email });
   if (user) return res.send({ message: "User Already Exists" });
 
@@ -27,6 +33,9 @@ exports.signup = async (req, res) => {
 };
 
 exports.signin = async (req, res) => {
+  const { error } = authValidation.loginValidation(req.body);
+  if (error) return res.status(400).send({ message: error.details[0].message })
+
   const user = await User.findOne({ email: req.body.email });
   if (!user) return res.status(500).send({ message: "No User available " });
 

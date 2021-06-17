@@ -13,7 +13,7 @@
                     <input nbInput type="password" fullWidth [(ngModel)]="password" shape="rectangle"
                       placeholder="Password" />
                     <br /><br />
-                    <button nbButton fullWidth shape="rectangle" status="primary" (click)="login()">
+                    <button [nbSpinner]="loading" nbSpinnerStatus="info" nbButton fullWidth shape="rectangle" status="primary" (click)="login()">
                       Login
                     </button> <br><br>
                     <button nbButton fullWidth shape="rectangle" status="primary" (click)="toggleCard($event, cardComponent)">

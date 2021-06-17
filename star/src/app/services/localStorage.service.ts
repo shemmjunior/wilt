@@ -15,6 +15,10 @@ export class LocalStorageService {
     return JSON.parse(localStorage.getItem('wilt_user'));
   }
 
+  getUserID(): any {
+    return JSON.parse(localStorage.getItem('wilt_user')).user_id;
+  }
+
 
   getToken(): string {
     return JSON.parse(localStorage.getItem('wilt_user')).token;

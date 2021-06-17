@@ -18,7 +18,6 @@ export class HttpErrorInterceptor implements HttpInterceptor {
     request: HttpRequest<any>,
     next: HttpHandler
   ): Observable<HttpEvent<any>> {
-    console.log('Error founds')
     return next.handle(request).pipe(
       catchError((error: HttpErrorResponse) => {
         this.toast.showDangerToast(error.error.message);
