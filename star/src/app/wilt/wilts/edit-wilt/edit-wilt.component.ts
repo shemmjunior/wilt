@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { ToastService } from 'src/app/services/toast.service';
 import { WiltService } from '../wilt.service';
+import { LocalStorageService } from '../../../services/localStorage.service';
 
 @Component({
   selector: 'app-edit-wilt',
@@ -18,7 +19,7 @@ export class EditWiltComponent implements OnInit {
   wiltData: any;
 
 
-  constructor(private toastService: ToastService, private router: Router, private route: ActivatedRoute, private wiltService: WiltService) {
+  constructor(private toastService: ToastService, private router: Router, private route: ActivatedRoute, private wiltService: WiltService, private localStorage: LocalStorageService) {
     this.id = this.route.snapshot.params.id;
 
   }
@@ -32,16 +33,16 @@ export class EditWiltComponent implements OnInit {
       title: this.title,
       description: this.description,
       ref_link_one: this.ref_link_one,
-      ref_link_two: this.ref_link_two
+      ref_link_two: this.ref_link_two,
+      user_id: this.localStorage.getUserID()
+
     }
 
-    // this.wiltService.updateWilt(id, data).subscribe((res) => {
-    //       this.toastService.showToast('top-right', 'Wilt Updated')
-    //       this.router.navigate(['../'], { relativeTo: this.route })
-    // }, (err) => {
-    //   this.toastService.showToast('top-right', 'Error Updating Wilt')
-    //      console.log(err)
-    // });
+    this.wiltService.updateWilt(this.id, data).subscribe((res) => {
+          this.router.navigate(['../'], { relativeTo: this.route })
+    }, (err) => {
+         console.log(err)
+    });
 
 
 

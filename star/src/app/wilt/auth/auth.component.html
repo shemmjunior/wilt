@@ -2,21 +2,50 @@
   <div fxFlex>
     <nb-layout>
       <nb-layout-column class="colored-column-info">
-        <nb-card class="center-card">
-          <nb-card-body>
-            <h4 style="text-align: center;">WILT LOGIN</h4>
-            <input nbInput type="text" [(ngModel)]="email" fullWidth shape="rectangle" placeholder="Email" />
-            <br /><br />
-            <input nbInput type="text" fullWidth [(ngModel)]="password" shape="rectangle" placeholder="Password" />
-            <br /><br />
-            <button nbButton fullWidth shape="rectangle" status="primary" (click)="login()">
-              Login
-            </button>
-          </nb-card-body>
-        </nb-card>
+        <nb-flip-card [showToggleButton]="false" #cardComponent>
+          <nb-card-front>
+
+                <nb-card class="center-card">
+                  <nb-card-body>
+                    <h4 style="text-align: center">WILT LOGIN</h4>
+                    <input nbInput type="text" [(ngModel)]="email" fullWidth shape="rectangle" placeholder="Email" />
+                    <br /><br />
+                    <input nbInput type="password" fullWidth [(ngModel)]="password" shape="rectangle"
+                      placeholder="Password" />
+                    <br /><br />
+                    <button [nbSpinner]="loading" nbSpinnerStatus="info" nbButton fullWidth shape="rectangle" status="primary" (click)="login()">
+                      Login
+                    </button> <br><br>
+                    <button nbButton fullWidth shape="rectangle" status="primary" (click)="toggleCard($event, cardComponent)">
+                      Signup
+                    </button>
+                  </nb-card-body>
+                </nb-card>
+          </nb-card-front>
+          <nb-card-back>
+
+                <nb-card class="center-card">
+                  <nb-card-body>
+                    <h4 style="text-align: center">WILT SIGNUP</h4>
+                    <input nbInput type="text" [(ngModel)]="username" fullWidth shape="rectangle" placeholder="Username" />
+                    <br /><br />
+                    <input nbInput type="text" [(ngModel)]="email" fullWidth shape="rectangle" placeholder="Email" />
+                    <br /><br />
+                    <input nbInput type="password" fullWidth [(ngModel)]="password" shape="rectangle"
+                      placeholder="Password" />
+                    <br /><br />
+                    <button nbButton fullWidth shape="rectangle" status="primary" (click)="signup()">
+                      Signup
+                    </button> <br><br>
+                    <button nbButton fullWidth shape="rectangle" status="primary" (click)="toggleCard($event, cardComponent)">
+                      Take me to Login
+                    </button>
+                  </nb-card-body>
+                </nb-card>
+
+          </nb-card-back>
+        </nb-flip-card>
       </nb-layout-column>
     </nb-layout>
   </div>
-
-
 </div>

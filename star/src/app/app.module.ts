@@ -6,9 +6,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NbThemeModule, NbSidebarModule, NbToastrModule } from '@nebular/theme';
 import { WiltModule } from './wilt/wilt.module';
 import { NbMenuModule } from '@nebular/theme';
-import { HttpClientModule } from '@angular/common/http';
-
-
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { AuthHttpInterceptor, AuthModule } from '@auth0/auth0-angular';
+import { environment } from '../environments/environment';
+import { InterceptorModule } from './inteceptors/interceptor.module';
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,9 +23,13 @@ import { HttpClientModule } from '@angular/common/http';
     NbMenuModule.forRoot(),
     NbToastrModule.forRoot(),
     WiltModule,
-    HttpClientModule
+    HttpClientModule,
+    InterceptorModule,
+    AuthModule.forRoot({
+      domain: 'wiltx.us.auth0.com',
+      clientId: environment.clientId,
+    }),
   ],
-  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

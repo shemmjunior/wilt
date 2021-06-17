@@ -11,7 +11,7 @@ export class WiltService {
   constructor(private http: HttpClient) {}
 
   postWilt(data): Observable<any> {
-    return this.http.post(`/wilt/add`, data);
+    return this.http.post(`/wilt`, data);
   }
 
   getWilts(): Observable<any> {

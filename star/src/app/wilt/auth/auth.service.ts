@@ -1,19 +1,26 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpBackend } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { environment } from '../../../environments/environment';
+
+const baseUrl = environment.serverUrl;
 
 @Injectable({
   providedIn: 'root'
 })
-export class AuthService {
+export class AuthenticationService {
+  private customHttpClient: HttpClient;
 
-  constructor(private http: HttpClient) { }
+
+  constructor(backend: HttpBackend) {
+    this.customHttpClient = new HttpClient(backend);
+  }
 
   signup(data: any): Observable<any> {
-    return this.http.post('/auth/signup', data)
+    return this.customHttpClient.post(`${baseUrl}/auth/signup`, data)
   }
 
   login(data: any): Observable<any> {
-    return this.http.post('/auth/login', data)
+    return this.customHttpClient.post(`${baseUrl}/auth/signin`, data)
   }
 }

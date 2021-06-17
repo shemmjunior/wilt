@@ -1,4 +1,11 @@
-[build]
+[functions]
+directory = "./src"
 
-functions = "functions"
-publish = "dist"
+[[headers]]
+    for = "/*"
+        [headers.values]
+            Access-Control-Allow-Origin = "*"
+
+[build]
+publish= "dist"
+command = "do-build && cp .env functions/"

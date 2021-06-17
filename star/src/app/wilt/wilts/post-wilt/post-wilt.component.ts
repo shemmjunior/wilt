@@ -3,6 +3,7 @@ import { ToastService } from '../../../services/toast.service';
 import { ActivatedRoute } from '@angular/router';
 import { Router } from '@angular/router';
 import { WiltService } from '../wilt.service';
+import { LocalStorageService } from '../../../services/localStorage.service';
 
 @Component({
   selector: 'app-post-wilt',
@@ -15,30 +16,33 @@ export class PostWiltComponent implements OnInit {
   description: string;
   ref_link_one: string;
   ref_link_two: string;
+  loading = false;
 
 
-  constructor(private toastService: ToastService, private router: Router, private route: ActivatedRoute, private wiltService: WiltService) {
+  constructor(private router: Router, private route: ActivatedRoute, private wiltService: WiltService, private localStorage: LocalStorageService) {
   }
 
-  ngOnInit() {
+  ngOnInit(): void {
 
   }
 
-  submit() {
+  submit(): void {
     const data = {
       title: this.title,
       description: this.description,
       ref_link_one: this.ref_link_one,
-      ref_link_two: this.ref_link_two
-    }
+      ref_link_two: this.ref_link_two,
+      user_id: this.localStorage.getUserID()
+    };
+    this.loading = true;
+    this.wiltService.postWilt(data).subscribe((res) => {
+      this.loading = true;
 
-    // this.wiltService.postWilt(data).subscribe((res) => {
-    //       this.toastService.showToast('top-right', 'Post Added')
-    //       this.router.navigate(['../'], { relativeTo: this.route })
-    // }, (err) => {
-    //   this.toastService.showToast('top-right', 'Error Posting Wilt')
+      this.router.navigate(['../'], { relativeTo: this.route })
+    }, (err) => {
+      this.loading = false;
 
-    // });
+    });
 
 
 

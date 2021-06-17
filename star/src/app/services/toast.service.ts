@@ -11,8 +11,11 @@ export class ToastService {
 
 
 
-  showToast(status, message) {
-    this.toastrService.show(status, message, { status })
-    // status, `Toast: ${++this.index}`, { status }
+  showSuccessToast(message) {
+    this.toastrService.info(message, 'Success')
+  }
+
+  showDangerToast(message) {
+    this.toastrService.danger(message, 'Error' )
   }
 }

@@ -5,6 +5,7 @@ import { PostWiltComponent } from './post-wilt/post-wilt.component';
 import { MyWiltsComponent } from './my-wilts/my-wilts.component';
 import { FavWiltsComponent } from './fav-wilts/fav-wilts.component';
 import { EditWiltComponent } from './edit-wilt/edit-wilt.component';
+import { WiltsResolver } from './resolvers/wilts.resolver';
 
 const routes: Routes = [
   {
@@ -12,7 +13,8 @@ const routes: Routes = [
     children: [
       {
         path: '',
-        component: WiltsComponent
+        component: WiltsComponent,
+        resolve: { wiltsData: WiltsResolver }
       },
       {
         path: 'add',
@@ -44,6 +46,9 @@ const routes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
+  providers: [
+    WiltsResolver
+  ]
 })
 export class WiltsRoutingModule { }

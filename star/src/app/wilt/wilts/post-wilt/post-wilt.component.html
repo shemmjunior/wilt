@@ -15,7 +15,7 @@
                 <br /><br />
                 <input nbInput type="text" fullWidth [(ngModel)]="ref_link_two" shape="rectangle" placeholder="Reference Link (Optional)" />
                 <br /><br />
-                <button nbButton fullWidth shape="rectangle" status="primary" (click)="submit()">
+                <button [nbSpinner]="loading" nbSpinnerStatus="info"  nbButton fullWidth shape="rectangle" status="primary" (click)="submit()">
                   Post
                 </button>
               </nb-card-body>
