@@ -45,3 +45,6 @@ testem.log
 .DS_Store
 Thumbs.db
 /star/src/environments/environment.ts
+star/src/environments/environment.ts
+wars/src/config/mongo.config.js
+star/src/environments/environment.ts
