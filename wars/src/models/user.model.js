@@ -10,6 +10,7 @@ UserSchema = new Schema(
         trim: true
     },
     username: String,
+    bio: String,
     password: {
         type: String,
         required: true,

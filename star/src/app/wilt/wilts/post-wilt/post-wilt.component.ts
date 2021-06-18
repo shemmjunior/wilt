@@ -1,9 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ToastService } from '../../../services/toast.service';
 import { ActivatedRoute } from '@angular/router';
 import { Router } from '@angular/router';
 import { WiltService } from '../wilt.service';
-import { LocalStorageService } from '../../../services/localStorage.service';
 
 @Component({
   selector: 'app-post-wilt',
@@ -19,7 +17,7 @@ export class PostWiltComponent implements OnInit {
   loading = false;
 
 
-  constructor(private router: Router, private route: ActivatedRoute, private wiltService: WiltService, private localStorage: LocalStorageService) {
+  constructor(private router: Router, private route: ActivatedRoute, private wiltService: WiltService) {
   }
 
   ngOnInit(): void {
@@ -32,19 +30,15 @@ export class PostWiltComponent implements OnInit {
       description: this.description,
       ref_link_one: this.ref_link_one,
       ref_link_two: this.ref_link_two,
-      user_id: this.localStorage.getUserID()
     };
-    this.loading = true;
-    this.wiltService.postWilt(data).subscribe((res) => {
-      this.loading = true;
 
-      this.router.navigate(['../'], { relativeTo: this.route })
+    this.loading = true;
+    this.wiltService.postWilt(data).subscribe(() => {
+      this.loading = true;
+      this.router.navigate(['../'], { relativeTo: this.route });
     }, (err) => {
       this.loading = false;
-
     });
-
-
 
   }
 

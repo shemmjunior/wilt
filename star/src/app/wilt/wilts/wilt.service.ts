@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpBackend, HttpClient } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 
@@ -28,6 +28,10 @@ export class WiltService {
 
   deleteWilt(id: string): Observable<any> {
     return this.http.delete(`/wilt/${id}`);
+  }
+
+  getOwnWilts(): Observable<any> {
+    return this.http.get(`/user/wilts`);
   }
 
 }

@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { WiltService } from './wilt.service';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
@@ -11,7 +10,7 @@ export class WiltsComponent implements OnInit {
 
   wilts: [];
 
-  constructor(private wiltService: WiltService, private route: ActivatedRoute) { }
+  constructor(private route: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.wilts = this.route.snapshot.data.wiltsData;

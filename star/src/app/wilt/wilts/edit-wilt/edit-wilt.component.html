@@ -7,16 +7,19 @@
             <nb-card class="center-card">
               <nb-card-body>
                 <h5 style="text-align: center">Update Wilt</h5>
-                <input nbInput type="text" fullWidth shape="rectangle" placeholder="Title" />
+                <input nbInput type="text" [(ngModel)]="title" fullWidth shape="rectangle" placeholder="Title" />
                 <br /><br />
-                <textarea nbInput fullWidth placeholder="Description"></textarea>
+                <textarea nbInput fullWidth [(ngModel)]="description" placeholder="Description"></textarea>
                 <br /><br />
-                <input nbInput type="text" fullWidth shape="rectangle" placeholder="Reference Link (Optional)" />
+                <input nbInput type="text" [(ngModel)]="ref_link_one" fullWidth shape="rectangle" placeholder="Reference Link (Optional)" />
                 <br /><br />
-                <input nbInput type="text" fullWidth shape="rectangle" placeholder="Reference Link (Optional)" />
+                <input nbInput type="text" [(ngModel)]="ref_link_two" fullWidth shape="rectangle" placeholder="Reference Link (Optional)" />
                 <br /><br />
                 <button nbButton fullWidth shape="rectangle" status="primary" (click)="submit()">
                   Update
+                </button> <br><br>
+                <button nbButton [routerLink]="'../../'" fullWidth shape="rectangle" status="danger">
+                  Cancel
                 </button>
               </nb-card-body>
             </nb-card>

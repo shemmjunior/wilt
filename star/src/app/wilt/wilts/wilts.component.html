@@ -1,19 +1,18 @@
-<nb-layout><nb-layout-column>
+<nb-layout>
+  <nb-layout-column>
+<div *ngIf="wilts.length == 0" >No Wilts Present</div>
+<div *ngIf="!wilts" >Loading Wilts....</div>
 
-  <nb-card class="center-card" *ngFor="let wilt of wilts">
-    <nb-card-header>
-      <nb-user
-        size="large"
-        [name]="wilt.title"
-        title="John Doe"
-        picture="https://via.placeholder.com/50/4479e7/ffffff?Text=IMG"
-      >
-      </nb-user>
-    </nb-card-header>
-    <nb-card-body>
-      {{ wilt.description }}
-    </nb-card-body>
-    <nb-card-footer>By Wikipedia</nb-card-footer>
-  </nb-card>
-</nb-layout-column></nb-layout>
-
+    <nb-card class="center-card" *ngFor="let wilt of wilts">
+      <nb-card-header>
+        <nb-user size="large" [name]="wilt.title" [title]="wilt.user_id"
+          picture="https://via.placeholder.com/50/4479e7/ffffff?Text=IMG">
+        </nb-user>
+      </nb-card-header>
+      <nb-card-body>
+        {{ wilt.description }}
+      </nb-card-body>
+      <nb-card-footer>{{ wilt.createdAt | date: 'dd MMM yyyy, H:mm' }}</nb-card-footer>
+    </nb-card>
+  </nb-layout-column>
+</nb-layout>

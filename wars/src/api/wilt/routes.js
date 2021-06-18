@@ -6,4 +6,7 @@ module.exports = (router) => {
         router.get('/wilt/:id', wilt.findOne)
         router.put('/wilt/:id', wilt.update)
         router.delete('/wilt/:id', wilt.delete)
+
+        router.get('/user/wilts', wilt.userWilts)
+
 }

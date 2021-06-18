@@ -7,7 +7,7 @@ WiltSchema = new Schema(
     description : String,
 	ref_link_one : String,
 	ref_link_two : String,
-    user_id: String
+    user_id: String,
     },
     { timestamps: true }
 );

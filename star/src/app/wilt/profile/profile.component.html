@@ -7,13 +7,13 @@
             <h5 style="text-align: center">Profile Settings</h5>
               <img src="https://randomuser.me/api/portraits/women/43.jpg" alt="Avatar" class="avatar-center">
 
-            <input nbInput type="text" fullWidth shape="rectangle" placeholder="Username" />
+            <input nbInput type="text" [(ngModel)]="username" fullWidth shape="rectangle" placeholder="Username" />
             <br /><br />
-            <input nbInput disabled type="text" fullWidth shape="rectangle" placeholder="Email" />
+            <input nbInput disabled type="text" [(ngModel)]="email" fullWidth shape="rectangle" placeholder="Email" />
             <br /><br />
-            <textarea nbInput fullWidth placeholder="Bio"></textarea>
+            <textarea nbInput fullWidth [(ngModel)]="bio" placeholder="Bio"></textarea>
             <br /><br />
-            <button nbButton fullWidth shape="rectangle" status="primary">
+            <button nbButton fullWidth (click)="updateProfile()" shape="rectangle" status="primary">
               Update Profile
             </button>
           </nb-card-body>
