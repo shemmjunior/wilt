@@ -30,4 +30,8 @@ export class WiltService {
     return this.http.delete(`/wilt/${id}`);
   }
 
+  getOwnWilts(): Observable<any> {
+    return this.http.get(`/user/wilts`);
+  }
+
 }

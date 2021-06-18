@@ -2,7 +2,7 @@ const Joi = require("joi");
 
  exports.loginValidation = (data) => {
   const schema = Joi.object({
-    email: Joi.string().min(6).max(20).required().email(),
+    email: Joi.string().min(6).max(50).required().email(),
     password: Joi.string().max(150).required(),
   });
   return schema.validate(data);
