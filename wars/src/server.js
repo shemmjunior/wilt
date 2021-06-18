@@ -24,6 +24,7 @@ mongoose.connect(db.url, { useNewUrlParser: true, useUnifiedTopology: true });
 
 require('./api/wilt/routes')(router)
 require('./api/auth/routes')(router)
+require('./api/profile/routes')(router)
 
 
 

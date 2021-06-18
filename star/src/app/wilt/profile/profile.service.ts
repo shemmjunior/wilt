@@ -10,10 +10,10 @@ export class ProfileService {
   constructor(private http: HttpClient) { }
 
   getProfile(): Observable<any> {
-    return this.http.get('/profile')
+    return this.http.get('/profile');
   }
 
-  updateProfile(id: string, data: any): Observable<any> {
-    return this.http.put(`/profile/${id}`, data)
+  updateProfile(data: any): Observable<any> {
+    return this.http.put(`/profile`, data);
   }
 }
