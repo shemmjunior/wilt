@@ -7,5 +7,5 @@ directory = "./src"
             Access-Control-Allow-Origin = "*"
 
 [build]
-publish= "dist"
-command = "do-build && cp .env functions/"
+command = "npm run build"
+publish= "/dist"
