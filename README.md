@@ -1,6 +1,6 @@
 
 # WILT
-WILT stands for What I'v Learn't Today. The repo builds a platform where you can share anything learnt today such as how you accomplish a hard but yet a simple task, shortcuts you have discovered. This will help even lazy learners like us to get atleast something for the day or an idea which you may later on face in your tasks. 
+WILT stands for What I'v Learn't Today. The repo builds a platform where you can share anything learnt today such as how you accomplish a hard but yet a simple task, shortcuts you have discovered.
 
 ## Structure
 | Codebase  | Description |
