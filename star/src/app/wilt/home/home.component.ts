@@ -11,6 +11,8 @@ import { LocalStorageService } from '../../services/localStorage.service';
 export class HomeComponent implements OnInit {
   items = [{ title: 'Profile' }, { title: 'Logout' }];
 
+  username: string;
+
   minimized = [
     { title: 'Home' },
     { title: 'Explore' },
@@ -31,6 +33,8 @@ export class HomeComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    this.username = this.localStorage.getUserData().username;
+    
     this.menuService.onItemClick().subscribe((event) => {
       if (event.item.title === 'Profile') {
         this.openProfilePage();

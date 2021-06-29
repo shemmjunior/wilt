@@ -23,7 +23,7 @@ exports.create = (req, res) => {
 };
 
 exports.index = (req, res) => {
-  Wilt.find()
+  Wilt.find().sort('-createdAt')
     .then((data) => {
       res.send(data);
     })

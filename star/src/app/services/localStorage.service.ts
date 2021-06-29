@@ -11,6 +11,7 @@ export class LocalStorageService {
     const format = JSON.stringify(data);
     localStorage.setItem('wilt_user', format);
   }
+  
   getUserData(): any {
     return JSON.parse(localStorage.getItem('wilt_user'));
   }
@@ -18,7 +19,6 @@ export class LocalStorageService {
   getUserID(): any {
     return JSON.parse(localStorage.getItem('wilt_user')).user_id;
   }
-
 
   getToken(): string {
     return JSON.parse(localStorage.getItem('wilt_user')).token;
